@@ -1,0 +1,19 @@
+---
+// src/components/Navbar.astro
+---
+
+<nav id="main-nav" class="w-full border-b border-white/10 bg-black/50 backdrop-blur-md sticky top-0 z-[50] transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    
+    <a href="/" class="hover:opacity-70 transition-opacity">
+      <img src="/logo.png" alt="Logo" class="h-8 md:h-10 w-auto" />
+    </a>
+
+    <div class="flex gap-8 md:gap-12">
+      <a href="#servicios" class="text-white/60 hover:text-white text-[10px] md:text-xs tracking-[0.3em] uppercase transition-colors">Servicios</a>
+      <a href="#productos" class="text-white/60 hover:text-white text-[10px] md:text-xs tracking-[0.3em] uppercase transition-colors">Productos</a>
+      <a href="#contacto" class="text-white/60 hover:text-white text-[10px] md:text-xs tracking-[0.3em] uppercase transition-colors">Contacto</a>
+    </div>
+
+  </div>
+</nav>

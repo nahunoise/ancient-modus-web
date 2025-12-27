@@ -1,0 +1,60 @@
+---
+// src/components/SectionManifesto.astro
+---
+
+<div class="max-w-4xl mx-auto px-6 py-24 flex flex-col gap-16">
+  
+  <div class="reveal border-l border-white/10 pl-6 md:pl-10 flex flex-col gap-6">
+    <p class="text-zinc-400 font-light tracking-[0.2em] uppercase text-[9px] md:text-[11px] leading-relaxed max-w-md">
+      Desarrollamos productos que honran y amplifican las capacidades humanas.
+    </p>
+  </div>
+
+  <div class="reveal border-l border-white/20 pl-6 md:pl-10">
+    <h2 class="text-white text-2xl md:text-4xl font-serif leading-[1.5] max-w-2xl">
+      Integrando la sabiduría de la voz, el tacto y la escucha con tecnologías que fortalezcan lo humano y nunca lo desplacen.
+    </h2>
+  </div>
+
+  <div class="reveal pl-6 md:pl-10">
+    <p class="text-zinc-500 font-light tracking-[0.2em] uppercase text-[9px] md:text-[11px]">
+      Ancient Modus Operandi — Filosofía de Diseño
+    </p>
+  </div>
+
+</div>
+
+<script>
+  // Este script detecta cuando los elementos entran en pantalla
+  const observerOptions = {
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  /* Configuración de la animación de aparición */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Delay opcional para que no aparezcan todos al mismo tiempo exacto */
+  .reveal:nth-child(2) { transition-delay: 0.2s; }
+  .reveal:nth-child(3) { transition-delay: 0.4s; }
+</style>

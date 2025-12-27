@@ -1,22 +1,38 @@
+---
+// Layout.astro
+---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Ancient Modus Operandi</title>
+    </head>
+    <body class="overflow-hidden"> <slot />
+
+        <script>
+            // 2. Después de que termine la animación (aprox 4.5s), devolvemos el scroll
+            setTimeout(() => {
+                document.body.classList.remove('overflow-hidden');
+            }, 4500); 
+        </script>
+    </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global> /* 3. Usamos is:global para que afecte a todo el sitio */
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000; /* Fondo negro para que no haya parpadeos blancos */
+        color: white;
+    }
+
+    /* Opcional: Suavizar el scroll una vez se active */
+    html {
+        scroll-behavior: smooth;
+    }
 </style>
