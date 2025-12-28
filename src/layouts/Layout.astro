@@ -1,6 +1,15 @@
 ---
 // Layout.astro
+interface Props {
+	title?: string;
+}
+
+const { title = "Ancient Modus Operandi" } = Astro.props;
+const description = "Herramientas basadas en IA para la era humana. Sinergia tecnológica y diseño consciente.";
+const url = "https://tu-dominio.com"; // Reemplaza por tu URL final
+const ogImage = "/og-image.jpg"; // Asegúrate de tener esta imagen en public/ (1200x630px)
 ---
+
 <!doctype html>
 <html lang="es">
     <head>
@@ -8,12 +17,27 @@
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>Ancient Modus Operandi</title>
+        
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={ogImage} />
     </head>
-    <body class="overflow-hidden"> <slot />
+    
+    <body class="overflow-hidden bg-black text-white">
+        <slot />
 
         <script>
-            // 2. Después de que termine la animación (aprox 4.5s), devolvemos el scroll
+            // Devolvemos el scroll después de la animación inicial
             setTimeout(() => {
                 document.body.classList.remove('overflow-hidden');
             }, 4500); 
@@ -21,18 +45,39 @@
     </body>
 </html>
 
-<style is:global> /* 3. Usamos is:global para que afecte a todo el sitio */
+<style is:global>
     html,
     body {
         margin: 0;
+        padding: 0;
         width: 100%;
-        height: 100%;
-        background-color: #000; /* Fondo negro para que no haya parpadeos blancos */
+        min-height: 100%;
+        background-color: #000;
         color: white;
     }
 
-    /* Opcional: Suavizar el scroll una vez se active */
     html {
         scroll-behavior: smooth;
+    }
+
+    /* Mejora el renderizado de fuentes en pantallas retina */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Scrollbar minimalista para que no rompa la estética */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #000;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #222;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #333;
     }
 </style>

@@ -12,98 +12,96 @@ import SectionManifesto from '../components/SectionManifesto.astro';
     <Navbar />
     
     <main class="bg-black">
-      <section id="servicios" class="min-h-[80vh] flex items-center justify-center">
+      <section id="manifiesto" class="min-h-[80vh] flex items-center justify-center">
         <SectionManifesto />
       </section>
-<section id="productos" class="min-h-screen bg-zinc-950 py-24 flex items-center justify-center">
-  <div class="max-w-7xl mx-auto px-6 w-full">
-    
-    <div class="reveal mb-16 border-l border-white/10 pl-6">
-      <h2 class="text-white font-serif text-3xl md:text-5xl">Nuestros Productos</h2>
-      <p class="text-zinc-500 uppercase tracking-[0.3em] text-[10px] mt-4">Herramientas basadas en IA para la era humana</p>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <div class="reveal group cursor-pointer" style="transition-delay: 0.1s;">
-        <div class="aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5 relative">
-          <img src="/producto_1.jpg" alt="Producto 01" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
-          <div class="absolute bottom-8 left-8">
-            <span class="text-white/30 text-xs font-light">01</span>
-            <h3 class="text-white text-xl font-serif mt-2">AloLeads</h3>
+      <section id="soluciones" class="min-h-screen bg-zinc-950 py-24 flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+          
+          <div class="reveal mb-16 border-l border-white/10 pl-6">
+            <h2 class="text-white font-serif text-3xl md:text-5xl">Nuestros Soluciones</h2>
+            <p class="text-zinc-500 uppercase tracking-[0.3em] text-[10px] mt-4">Nuestras soluciones permiten simplificar las operaciones: automatizan tareas, optimizan seguimientos y mejoran la experiencia de clientes, apoyando al equipo humano para que enfoque su tiempo en lo que realmente importa.</p>
           </div>
-        </div>
-      </div>
 
-      <div class="reveal group cursor-pointer" style="transition-delay: 0.2s;">
-        <div class="aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5 relative">
-          <img src="/producto_1.jpg" alt="Producto 02" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
-          <div class="absolute bottom-8 left-8">
-            <span class="text-white/30 text-xs font-light">02</span>
-            <h3 class="text-white text-xl font-serif mt-2">Sicitas</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="reveal group cursor-pointer" style="transition-delay: 0.1s;">
+              <div class="aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5 relative">
+                <img src="/producto_1.jpg" alt="AloLeads" class="w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-all duration-700 group-hover:scale-105" />
+                <div class="absolute bottom-8 left-8 right-8">
+                  <span class="text-white/20 text-[10px] font-mono">01</span>
+                  <h3 class="text-white text-xl font-serif mt-2 italic">AloLeads</h3>
+                  <p class="text-zinc-500 uppercase tracking-[0.2em] text-[9px] mt-4 leading-relaxed border-l border-white/10 pl-4">
+                    Conexiones inteligentes <br/> de alto impacto.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal group cursor-pointer" style="transition-delay: 0.2s;">
+              <div class="aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5 relative">
+                <img src="/producto_1.jpg" alt="Sicitas" class="w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-all duration-700 group-hover:scale-105" />
+                <div class="absolute bottom-8 left-8 right-8">
+                  <span class="text-white/20 text-[10px] font-mono">02</span>
+                  <h3 class="text-white text-xl font-serif mt-2 italic">Sicitas</h3>
+                  <p class="text-zinc-500 uppercase tracking-[0.2em] text-[9px] mt-4 leading-relaxed border-l border-white/10 pl-4">
+                    Gestión fluida <br/> y humana.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal group cursor-pointer" style="transition-delay: 0.3s;">
+              <div class="aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5 relative">
+                <img src="/producto_1.jpg" alt="BoostYourPitch" class="w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-all duration-700 group-hover:scale-105" />
+                <div class="absolute bottom-8 left-8 right-8">
+                  <span class="text-white/20 text-[10px] font-mono">03</span>
+                  <h3 class="text-white text-xl font-serif mt-2 italic">BoostYourPitch</h3>
+                  <p class="text-zinc-500 uppercase tracking-[0.2em] text-[9px] mt-4 leading-relaxed border-l border-white/10 pl-4">
+                    Presentaciones que <br/> resuenan con IA.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+		  
         </div>
-      </div>
+      </section>
 
-      <div class="reveal group cursor-pointer" style="transition-delay: 0.3s;">
-        <div class="aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5 relative">
-          <img src="/producto_1.jpg" alt="Producto 03" class="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
-          <div class="absolute bottom-8 left-8">
-            <span class="text-white/30 text-xs font-light">03</span>
-            <h3 class="text-white text-xl font-serif mt-2">Boostyourpitch</h3>
-          </div>
+      <section id="contacto" class="h-screen bg-black flex flex-col items-center justify-center px-6">
+        <div class="flex flex-col items-center gap-6 md:gap-10">
+          <h2 class="reveal text-zinc-500 font-light tracking-[0.4em] uppercase text-[10px] md:text-xs">
+            Contacto
+          </h2>
+          <a href="mailto:hello@ancientmodusoperandi.com" class="reveal group relative">
+            <p class="text-white font-serif text-2xl md:text-4xl lg:text-6xl tracking-tight transition-opacity duration-500 group-hover:opacity-70">
+              hello@ancientmodusoperandi.com
+            </p>
+            <div class="w-0 h-[1px] bg-white/30 mx-auto mt-4 transition-all duration-700 group-hover:w-full"></div>
+          </a>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-     <section id="contacto" class="h-screen bg-black flex flex-col items-center justify-center px-6">
-  
-  <div class="flex flex-col items-center gap-6 md:gap-10">
-    
-    <h2 class="reveal text-zinc-500 font-light tracking-[0.4em] uppercase text-[10px] md:text-xs">
-      Contacto
-    </h2>
-
-    <a 
-      href="mailto:hello@ancientmodusoperandi.com" 
-      class="reveal group relative"
-    >
-      <p class="text-white font-serif text-2xl md:text-6xl lg:text-7xl tracking-tight transition-opacity duration-500 group-hover:opacity-70">
-        hello@ancientmodusoperandi.com
-      </p>
-      
-      <div class="w-0 h-[1px] bg-white/30 mx-auto mt-4 transition-all duration-700 group-hover:w-full"></div>
-    </a>
-
-  </div>
-
-  <div class="reveal absolute bottom-20 flex gap-10 opacity-40 hover:opacity-100 transition-opacity duration-700">
-    <a href="#" class="text-white text-[10px] tracking-widest uppercase">LinkedIn</a>
-	<a href="#" class="text-white text-[10px] tracking-widest uppercase">Substack</a>
-    
-  </div>
-
-</section>
+        <div class="reveal absolute bottom-20 flex gap-10 opacity-40 hover:opacity-100 transition-opacity duration-700">
+          <a href="#" class="text-white text-[10px] tracking-widest uppercase">LinkedIn</a>
+          <a href="#" class="text-white text-[10px] tracking-widest uppercase">Substack</a>
+        </div>
+      </section>
     </main>
   </div>
 </Layout>
 
 <script>
-  // Script de revelación por scroll (Intersection Observer)
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px" // Se activa un poco antes de llegar para fluidez
+    rootMargin: "0px 0px -50px 0px"
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Opcional: dejar de observar una vez animado
-        // observer.unobserve(entry.target); 
       }
     });
   }, observerOptions);
@@ -112,7 +110,6 @@ import SectionManifesto from '../components/SectionManifesto.astro';
 </script>
 
 <style is:global>
-  /* Base para la animación de revelación */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -120,8 +117,6 @@ import SectionManifesto from '../components/SectionManifesto.astro';
                 transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity;
   }
-
-  /* Estado activo cuando entra en el viewport */
   .reveal.active {
     opacity: 1;
     transform: translateY(0);

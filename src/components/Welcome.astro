@@ -1,135 +1,95 @@
----
-// src/components/Welcome.astro
----
-
 <section id="welcome-hero" class="relative w-full h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
   
   <div class="absolute inset-0">
-    <img src="/tu-imagen.jpg" class="w-full h-full object-cover organic-movement" />
+    <img src="/tu-imagen.jpg" class="w-full h-full object-cover organic-movement" alt="Background" />
     <div class="absolute inset-0 bg-black/50"></div>
   </div>
 
-  <div class="relative z-10 flex flex-col items-center gap-12 fade-up-text px-4">
-    <div class="[perspective:1000px]">
+  <div class="relative z-10 flex flex-col items-center gap-10 fade-up-text px-4 w-full -translate-y-10">
+    
+    <div class="[perspective:1000px] w-full flex justify-center">
       <img 
         src="/logo.png" 
-        class="logo-img w-full max-w-[100px] md:max-w-[300px] h-auto drop-shadow-2xl transition-transform duration-200 ease-out pointer-events-none"
+        alt="Ancient Modus Operandi" 
+        class="logo-img w-full max-w-[200px] md:max-w-[240px] h-auto drop-shadow-2xl transition-transform duration-200 ease-out pointer-events-none"
       />
     </div>
 
     <button 
       id="continue-btn"
-      class="group relative px-10 py-4 text-white border border-white/20 hover:border-white transition-all duration-500 uppercase tracking-[0.3em] text-xs overflow-hidden backdrop-blur-sm"
+      class="group relative w-full max-w-[200px] md:max-w-[240px] py-4 text-white border border-white/10 hover:border-white/40 transition-all duration-700 uppercase tracking-[0.4em] text-[9px] md:text-[10px] overflow-hidden backdrop-blur-sm bg-white/[0.02]"
     >
       <span class="relative z-10">Continuar</span>
-      <div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+      <div class="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
     </button>
   </div>
 
-  <div class="absolute bottom-8 left-0 w-full flex flex-col items-center gap-2 pointer-events-none opacity-60">
-    <span class="text-white/40 text-[9px] tracking-[0.5em] uppercase">
-      Explorar
+  <div class="absolute bottom-6 left-0 w-full flex flex-col items-center gap-1 pointer-events-none opacity-40">
+    <span class="text-white/40 text-[8px] tracking-[0.6em] uppercase">
+      desliza
     </span>
-    <div class="w-[1px] h-8 bg-gradient-to-b from-white/40 to-transparent"></div>
+    <div class="w-[1px] h-6 bg-gradient-to-b from-white/40 to-transparent"></div>
   </div>
 
 </section>
 
 <script>
-  const btn = document.getElementById('continue-btn');
-  
-  btn?.addEventListener('click', () => {
-    // Buscamos el inicio del contenido (el main)
-    const mainContent = document.querySelector('main');
-    if (mainContent) {
-      mainContent.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-</script>
-
-<style>
-  /* Efecto de Respiración Cinematográfica */
-  .organic-movement {
-    /* Eliminamos las traslaciones agresivas para ganar sutileza */
-    animation: cinematic-breath 25s infinite alternate ease-in-out;
-    /* Un punto de partida más neutro */
-    filter: brightness(0.6) contrast(1.1);
-    will-change: transform, filter; /* Optimiza el rendimiento */
-  }
-
-  @keyframes cinematic-breath {
-    0% { 
-      transform: scale(1.02); 
-      filter: brightness(0.6) saturate(0.9);
-    }
-    50% { 
-      /* Un zoom casi imperceptible y un ligero aumento de luz */
-      transform: scale(1.08); 
-      filter: brightness(0.75) saturate(1.1);
-    }
-    100% { 
-      transform: scale(1.04); 
-      filter: brightness(0.65) saturate(1);
-    }
-  }
-
-  /* Animación de entrada para el Logo y Botón */
-  .fade-up-text {
-    /* Cambiamos la entrada a un desenfoque sutil que se aclara */
-    animation: soft-reveal 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  @keyframes soft-reveal {
-    0% { 
-      opacity: 0; 
-      letter-spacing: -2px;
-      filter: blur(15px);
-      transform: scale(0.98);
-    }
-    100% { 
-      opacity: 1; 
-      letter-spacing: normal;
-      filter: blur(0px);
-      transform: scale(1);
-    }
-  }
-
-  /* Mejora del botón para que sea más minimalista */
-  #continue-btn {
-    backdrop-filter: blur(4px);
-    background-color: rgba(255, 255, 255, 0.03);
-  }
-</style>
-<script>
+  // Script consolidado (solo uno para evitar conflictos)
   const btn = document.getElementById('continue-btn');
   const container = document.getElementById('welcome-hero');
   const logo = document.querySelector('.logo-img');
 
-  // Scroll al hacer click
+  // Scroll suave al hacer click
   btn?.addEventListener('click', () => {
     const mainContent = document.querySelector('main');
     mainContent?.scrollIntoView({ behavior: 'smooth' });
   });
 
-  // Efecto de inclinación (Tilt) al mover el mouse
+  // Efecto de inclinación (Tilt)
   container?.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
+    const { clientX, clientY } = (e as MouseEvent);
     const { innerWidth, innerHeight } = window;
 
-    // Calculamos el desplazamiento (-1 a 1)
     const xPos = (clientX / innerWidth - 0.5) * 2;
     const yPos = (clientY / innerHeight - 0.5) * 2;
 
-    // Aplicamos la rotación sutil al logo (máximo 10 grados)
     if (logo instanceof HTMLElement) {
-      logo.style.transform = `rotateY(${xPos * 10}deg) rotateX(${-yPos * 10}deg) scale(1.05)`;
+      logo.style.transform = `rotateY(${xPos * 10}deg) rotateX(${-yPos * 10}deg) scale(1.02)`;
     }
   });
 
-  // Resetear posición cuando el mouse sale
   container?.addEventListener('mouseleave', () => {
     if (logo instanceof HTMLElement) {
       logo.style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
     }
   });
 </script>
+
+<style>
+  /* Mantenemos tus estilos de animación intactos */
+  .organic-movement {
+    animation: cinematic-breath 25s infinite alternate ease-in-out;
+    filter: brightness(0.6) contrast(1.1);
+    will-change: transform, filter;
+  }
+
+  @keyframes cinematic-breath {
+    0% { transform: scale(1.02); filter: brightness(0.6) saturate(0.9); }
+    50% { transform: scale(1.08); filter: brightness(0.75) saturate(1.1); }
+    100% { transform: scale(1.04); filter: brightness(0.65) saturate(1); }
+  }
+
+  .fade-up-text {
+    animation: soft-reveal 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes soft-reveal {
+    0% { opacity: 0; filter: blur(15px); transform: scale(0.98); }
+    100% { opacity: 1; filter: blur(0px); transform: scale(1); }
+  }
+
+  #continue-btn {
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+</style>
